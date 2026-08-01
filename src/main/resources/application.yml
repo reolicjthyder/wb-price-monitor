@@ -22,6 +22,9 @@ wbmon:
   owner-chat-id: ${OWNER_CHAT_ID:0}
   poll:
     tick-ms: ${POLL_TICK_MS:60000}
+  telegram:
+    bot-token: ${TELEGRAM_BOT_TOKEN:}
+    bot-username: ${TELEGRAM_BOT_USERNAME:wb_price_monitor_bot}
   wb:
     base-url: ${WB_BASE_URL:https://card.wb.ru}
     connect-timeout-ms: 3000

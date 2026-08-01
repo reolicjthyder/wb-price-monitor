@@ -25,6 +25,8 @@ services:
       DB_USER: wbmon
       DB_PASSWORD: ${POSTGRES_PASSWORD:-wbmon_local}
       OWNER_CHAT_ID: ${OWNER_CHAT_ID:?OWNER_CHAT_ID is required}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:?TELEGRAM_BOT_TOKEN is required}
+      TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME:-wb_price_monitor_bot}
     depends_on:
       postgres:
         condition: service_healthy
