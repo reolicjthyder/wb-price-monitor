@@ -8,13 +8,13 @@ import org.springframework.context.ApplicationContext;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class WbPriceMonitorApplicationTest {
+class WbPriceMonitorApplicationTest extends AbstractPostgresTest {
 
     @Autowired
     private ApplicationContext context;
 
     @Test
-    void contextLoads() {
+    void contextLoadsAndSchemaValidates() {
         assertThat(context.getBean(WbPriceMonitorApplication.class)).isNotNull();
     }
 }
