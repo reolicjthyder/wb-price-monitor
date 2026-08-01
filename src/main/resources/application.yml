@@ -18,6 +18,16 @@ spring:
 server:
   port: 8080
 
+wbmon:
+  wb:
+    base-url: ${WB_BASE_URL:https://card.wb.ru}
+    connect-timeout-ms: 3000
+    read-timeout-ms: 5000
+    # 3 ретрая с паузами 1s → 3s → 9s
+    max-retries: 3
+    backoff-initial-ms: 1000
+    backoff-multiplier: 3
+
 logging:
   level:
     dev.portfolio.wbmon: INFO

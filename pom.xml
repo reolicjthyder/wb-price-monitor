@@ -66,6 +66,17 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--
+            Именно wiremock-standalone: в нём затенены Jetty и Jackson,
+            поэтому он не конфликтует с Tomcat/Jackson из Spring Boot 3.3.
+        -->
+        <dependency>
+            <groupId>org.wiremock</groupId>
+            <artifactId>wiremock-standalone</artifactId>
+            <version>3.9.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
