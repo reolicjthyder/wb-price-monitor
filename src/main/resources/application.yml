@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: wb-price-monitor
+
+server:
+  port: 8080
+
+logging:
+  level:
+    dev.portfolio.wbmon: INFO
