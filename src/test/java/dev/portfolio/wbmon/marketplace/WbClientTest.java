@@ -37,9 +37,11 @@ class WbClientTest {
     void setUp() {
         wireMock = new WireMockServer(options().dynamicPort());
         wireMock.start();
-        // backoff 1 мс с множителем 1 — тест не должен спать 13 секунд
+        // backoff 1 мс с множителем 1 — тест не должен спать 13 секунд.
+        // Таймауты щедрые: тест проверяет ретраи по 5xx, а не по таймауту; на прогретой
+        // WireMock под нагрузкой 500 мс иногда не хватало и появлялся лишний ретрай.
         client = new WbClient("http://localhost:" + wireMock.port(),
-                500, 500, 3, 1L, 1L, new ObjectMapper());
+                5000, 5000, 3, 1L, 1L, new ObjectMapper());
     }
 
     @AfterEach
