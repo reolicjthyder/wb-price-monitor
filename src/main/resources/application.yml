@@ -19,6 +19,9 @@ server:
   port: 8080
 
 wbmon:
+  owner-chat-id: ${OWNER_CHAT_ID:0}
+  poll:
+    tick-ms: ${POLL_TICK_MS:60000}
   wb:
     base-url: ${WB_BASE_URL:https://card.wb.ru}
     connect-timeout-ms: 3000

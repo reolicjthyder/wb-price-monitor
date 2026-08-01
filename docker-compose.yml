@@ -24,6 +24,7 @@ services:
       DB_URL: jdbc:postgresql://postgres:5432/wbmon
       DB_USER: wbmon
       DB_PASSWORD: ${POSTGRES_PASSWORD:-wbmon_local}
+      OWNER_CHAT_ID: ${OWNER_CHAT_ID:?OWNER_CHAT_ID is required}
     depends_on:
       postgres:
         condition: service_healthy
